@@ -99,10 +99,11 @@ func (m *methods) processIncomingMessage(c *Channel, msg *protocol.Message) {
 		}
 
 		data := f.getArgs()
-		err := json.Unmarshal([]byte(msg.Args), &data)
-		if err != nil {
-			return
-		}
+		//err := json.Unmarshal([]byte(msg.Args), &data)
+		//if err != nil {
+		//	return
+		//}
+		data = msg.Args
 
 		f.callFunc(c, data)
 
