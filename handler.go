@@ -103,7 +103,7 @@ func (m *methods) processIncomingMessage(c *Channel, msg *protocol.Message) {
 		//if err != nil {
 		//	return
 		//}
-		data = msg.Args
+		data = interface{}(msg.Args)
 
 		f.callFunc(c, data)
 
